@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>chrome bug</title>
+</head>
+<body>
+	<canvas id="c" width="3000" height="3000"></canvas>
+	<script type="text/javascript">
+	var bug = false;
+	var canvas = document.getElementById('c');
+	var ctx = canvas.getContext('2d');
+	var p1 = {x:0, y:2200, r:100};
+	var p2 = {x:2200, y:0, r:900};
+	function distance(a, b) {
+		var dx = a.x - b.x;
+		var dy = a.y - b.y;
+		var d = Math.sqrt(dx*dx + dy*dy);
+		return d;
+	}
+	while(distance(p1, p2) > (p1.r + p2.r))
+	{
+		p1.x += 1;
+		p1.y -= 1;
+		if(bug) {
+			p2.x -= 1;
+			p2.y += 1;
+		}
+	}
+	ctx.beginPath();
+	ctx.arc(p1.x, p1.y, p1.r, 0, 2*Math.PI, true);
+	ctx.arc(p2.x, p2.y, p2.r, 0, 2*Math.PI, true);
+	ctx.stroke();
+	</script>
+</body>
+</html>
