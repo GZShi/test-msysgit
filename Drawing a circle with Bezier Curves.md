@@ -1,5 +1,6 @@
 ## 用贝塞尔曲线绘制圆形
 
+原文：[Drawing a circle with Bezier Curves](http://www.whizkidtech.redprince.net/bezier/circle/)  
 作者：G. Adam Stanislav  
 翻译：[GZShi](http://weibo.com/sgzwbo)  
 时间：2013/8/8 22:33
